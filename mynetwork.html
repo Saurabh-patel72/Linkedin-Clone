@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn - My Network</title>
+    <style>
+        /* Styles for LinkedIn My Network Page */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #0073b1;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #network-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .profile-card button {
+            background-color: #ef17d2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .profile-card button:hover {
+            background-color: #005f8d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const connectButtons = document.querySelectorAll('.profile-card button');
+
+            connectButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    alert('Connection request sent to ' + button.dataset.name + '!');
+                    button.textContent = 'Pending';
+                    button.disabled = true;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/">Home</a></li>
+                <li><a href="/network" class="active">My Network</a></li>
+                <li><a href="http://127.0.0.1:5500/HTML/jobs.html">Jobs</a></li>
+                <li><a href="/messages">Messages</a></li>
+                <li><a href="/notifications">Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>My Network</h2>
+        <div id="network-container">
+            <div class="profile-card">
+                <img src="/post-image-1.png" alt="Profile 1">
+                <p><strong>abcd</strong></p>
+                <p>Software Engineer</p>
+                <button data-name="John Doe">Connect</button>
+            </div> 
+            <div class="profile-card">
+                <img src="/post-image-2.png" alt="Profile 2">
+                <p><strong>Jane Smith</strong></p>
+                <p>Marketing Specialist</p>
+                <button data-name="Jane Smith">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/post-image-3.png" alt="Profile 3">
+                <p><strong>Emily Davis</strong></p>
+                <p>Project Manager</p>
+                <button data-name="Emily Davis">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/post-image-4.png" alt="Profile 4">
+                <p><strong>Michael Lee</strong></p>
+                <p>Data Scientist</p>
+                <button data-name="Michael Lee">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/myphoto.jpg" alt="Profile 5">
+                <p><strong>SAURABH</strong></p>
+                <p>Data structure and algorithm</p>
+                <button data-name="Alex Johnson">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/Elon.jpg" alt="Profile 6">
+                <p><strong>Alone musk</strong></p>
+                <p>CEO of tesla company</p>
+                <button data-name="Susan Brown">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/user-1.png" alt="Profile 7">
+                <p><strong>Chris Green</strong></p>
+                <p>Product Manager</p>
+                <button data-name="Chris Green">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/user-2.png" alt="Profile 8">
+                <p><strong>Anna White</strong></p>
+                <p>HR Specialist</p>
+                <button data-name="Anna White">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/user-3.png" alt="Profile 9">
+                <p><strong>Paul Red</strong></p>
+                <p>Graphic Designer</p>
+                <button data-name="Paul Red">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/user-4.png" alt="Profile 10">
+                <p><strong>Linda Black</strong></p>
+                <p>Business Analyst</p>
+                <button data-name="Linda Black">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/user-5.png" alt="Profile 11">
+                <p><strong>Robert Blue</strong></p>
+                <p>Cloud Engineer</p>
+                <button data-name="Robert Blue">Connect</button>
+            </div>
+            <div class="profile-card">
+                <img src="/post-image-2.png" alt="Profile 12">
+                <p><strong>Patricia Grey</strong></p>
+                <p>DevOps Specialist</p>
+                <button data-name="Patricia Grey">Connect</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Create by SAURABH</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn - Jobs</title>
+    <style>
+        /* Styles for LinkedIn Jobs Page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #0073b1;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .job-listing {
+            background: white;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .company-name {
+            color: #0073b1;
+            margin: 5px 0;
+        }
+
+        .apply-button {
+            background-color: #0073b1;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .apply-button:hover {
+            background-color: #005f8d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const applyButtons = document.querySelectorAll('.apply-button');
+            applyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    alert('Application submitted for ' + button.dataset.jobTitle + '!');
+                    button.textContent = 'Applied';
+                    button.disabled = true;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/">Home</a></li>
+                <li><a href="http://127.0.0.1:5500/HTML/mynetwork.html">My Network</a></li>
+                <li><a href="/jobs" class="active">Jobs</a></li>
+                <li><a href="/messages">Messages</a></li>
+                <li><a href="/notifications">Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Jobs You May Be Interested In</h2>
+        <div class="job-listing">
+            <p class="job-title">Software Engineer</p>
+            <p class="company-name">TechCorp Inc.</p>
+            <button class="apply-button" data-job-title="Software Engineer">Apply</button>
+        </div>
+        <div class="job-listing">
+            <p class="job-title">Marketing Specialist</p>
+            <p class="company-name">Creative Minds Ltd.</p>
+            <button class="apply-button" data-job-title="Marketing Specialist">Apply</button>
+        </div>
+        <div class="job-listing">
+            <p class="job-title">Project Manager</p>
+            <p class="company-name">BuildRight Co.</p>
+            <button class="apply-button" data-job-title="Project Manager">Apply</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LinkedIn Corporation</p>
+    </footer>
+</body>
+</html>

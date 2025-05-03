@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+        }
+
+        /* Notification Button */
+        .notification-button {
+            padding: 15px 25px;
+            background-color: #0077b5;
+            color: white;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .notification-button:hover {
+            background-color: #005c91;
+        }
+
+        /* Notification Box */
+        .notification-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 300px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .notification-box h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+            color: #0077b5;
+        }
+
+        .notification-box p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .notification-box button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .notification-box button:hover {
+            background-color: #005c91;
+        }
+    </style>
+</head>
+<body>
+    <button class="notification-button" onclick="showNotification()">Show Notification</button>
+
+    <div class="notification-box" id="notificationBox">
+        <a href="http://127.0.0.1:5500/"> <span>Home</span></a>
+        <h4>New Message</h4>
+        <p>You have a new message from Saurabh.</p>
+        <button onclick="closeNotification()">Dismiss</button>
+    </div>
+
+
+    <script>
+        function showNotification() {
+            const notificationBox = document.getElementById('notificationBox');
+            notificationBox.style.display = 'block';
+
+            // Auto-hide notification after 5 seconds
+            setTimeout(() => {
+                notificationBox.style.display = 'none';
+            }, 5000);
+        }
+
+        function closeNotification() {
+            const notificationBox = document.getElementById('notificationBox');
+            notificationBox.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
